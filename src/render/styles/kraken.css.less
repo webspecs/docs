@@ -90,6 +90,7 @@ header {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:    @titleFont;
+    color:  @darkBack;
 }
 h1 {
     font-size:  48px;
@@ -102,6 +103,47 @@ h1.onlyTitle {
     margin-top: 26px;
 }
 
+// body stuff
+p, li, dd, dt {
+    line-height:    1.8;
+}
+a {
+    color:  @darkBack;
+    text-decoration:    none;
+}
+dt {
+    font-weight:    bold;
+}
+dd {
+    padding:    0 0 1em 2em;
+}
+blockquote {
+    margin: 1em 3em 1em 3em;
+    font-style: italic;
+}
+
+// Footer
+footer {
+    background: @darkBack;
+    font-family:    @titleFont;
+    color:  #fff;
+    padding-top:    2em;
+    text-align: right;
+    clear:  both;
+}
+.subfooter {
+    max-width:  @baseWidth;
+    margin: 0 auto;
+}
+footer a {
+    color:  #fff;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+
 // utilities
 .clearfix {
     display: block;
@@ -113,5 +155,29 @@ h1.onlyTitle {
         height: 0;
         clear: both;
         visibility: hidden;
+    }
+}
+
+// alternative
+@media print {
+    header {
+        background: #fff;
+        color:  #000;
+    }
+    footer {
+        background: #fff;
+        color:  #000;
+    }
+    a {
+        color:  #666;
+        border-bottom:  1px dotted #666;
+    }
+    a[href^="http"]:after {
+        content: "  (" attr(href) ")";
+        color:  #333;
+        font-style: italic;
+    }
+    footer a[href^="http"]:after {
+        content:    "";
     }
 }
