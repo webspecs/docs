@@ -1,0 +1,17 @@
+doctype
+html(lang="en")
+  head
+    - var tit = document.title + " | WebPlatform Specs"
+    title= tit
+    != getBlock("styles").add(["/styles/kraken.css"]).toHTML()
+  body
+    header
+      div.subheader.clearfix
+        img(src="/img/logo.svg", width="100", height="100", alt="WebPlatform Specs")
+        div.title
+          h1(class=document.subtitle ? "" : "onlyTitle")= document.articleTitle || document.title
+          if document.subtitle
+            div.subtitle= document.subtitle
+    div.content!= content
+    != getBlock("scripts").toHTML()
+

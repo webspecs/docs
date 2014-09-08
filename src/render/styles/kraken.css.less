@@ -1,0 +1,117 @@
+
+// font loading
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/raleway-thin-webfont.eot");
+    src: url("/fonts/raleway-thin-webfont.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/raleway-thin-webfont.woff") format("woff"),
+         url("/fonts/raleway-thin-webfont.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/merriweather-light-webfont.eot");
+    src: url("/fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/merriweather-light-webfont.woff") format("woff"),
+         url("/fonts/merriweather-light-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/merriweather-bold-webfont.eot");
+    src: url("/fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/merriweather-bold-webfont.woff") format("woff"),
+         url("/fonts/merriweather-bold-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/merriweather-bolditalic-webfont.eot");
+    src: url("/fonts/merriweather-bolditalic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/merriweather-bolditalic-webfont.woff") format("woff"),
+         url("/fonts/merriweather-bolditalic-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/merriweather-lightitalic-webfont.eot");
+    src: url("/fonts/merriweather-lightitalic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/merriweather-lightitalic-webfont.woff") format("woff"),
+         url("/fonts/merriweather-lightitalic-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+// basic variables
+@lightBack: #f1ecd7;
+@darkBack:  #fe6a65;
+@titleFont: Raleway, sans-serif;
+@textFont:  Merriweather, serif;
+@baseWidth: 50em;
+@headerColor: #fff;
+
+// structure
+html, body {
+    margin: 0;
+    padding:    0;
+    font-family:    @textFont;
+}
+div.content {
+    max-width:  @baseWidth;
+    margin: 0 auto;
+}
+
+// header styles
+header {
+    margin: 16px 0;
+    background: @darkBack;
+}
+.subheader {
+    max-width:  @baseWidth;
+    margin: 0 auto;
+    padding:    10px 0;
+    img {
+        float:  left;
+    }
+    .title {
+        margin-left:    116px;
+    }
+    .subtitle {
+        font-style: italic;
+        color:  @headerColor;
+        font-family:    @titleFont;
+        font-size:  20px
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:    @titleFont;
+}
+h1 {
+    font-size:  48px;
+    font-weight:    100;
+    color:  @headerColor;
+    margin: 16px 0 0 0;
+    padding:    0;
+}
+h1.onlyTitle {
+    margin-top: 26px;
+}
+
+// utilities
+.clearfix {
+    display: block;
+    zoom: 1;
+    &:after {
+        content: " ";
+        display: block;
+        font-size: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
