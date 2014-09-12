@@ -75,11 +75,19 @@ header {
     max-width:  @baseWidth;
     margin: 0 auto;
     padding:    10px 0;
-    img {
-        float:  left;
+    & > a {
+        float:left;
+        & > img {
+            background-color: white;
+            padding: 13px;
+            margin: 20px 0;
+            width: 80px;
+            height: 74px;
+        }
     }
     .title {
-        margin-left:    116px;
+        margin-left:123px;
+        margin-top:25px;
     }
     .subtitle {
         font-style: italic;
