@@ -3,7 +3,7 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width")
-    - var docTitle = document.title + ((typeof document.subtitle !== 'undefined')?' ' + document.subtitle + ' ' :'') + site.title_append
+    - var docTitle = document.title + site.title_append
     title= docTitle
     != getBlock("styles").add(["/styles/kraken.css"]).toHTML()
   body
