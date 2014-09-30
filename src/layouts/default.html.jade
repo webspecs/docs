@@ -3,8 +3,8 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width")
-    - var tit = document.title + " | WebPlatform Specs"
-    title= tit
+    - var docTitle = document.title + ((typeof document.subtitle !== 'undefined')?' ' + document.subtitle + ' ' :'') + site.title_append
+    title= docTitle
     != getBlock("styles").add(["/styles/kraken.css"]).toHTML()
   body
     header
@@ -25,4 +25,3 @@ html(lang="en")
           |  • 
           a(href="/policy/anti-jerk.html") anti-jerk policy
     != getBlock("scripts").toHTML()
-

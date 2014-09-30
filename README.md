@@ -1,4 +1,3 @@
-specs.webplatform.org
-=====================
+# [WebPlatform Specs](http://specs.webplatform.org)
 
-The content of that site
+The static content served for specs.webplatform.org.
