@@ -1,19 +1,23 @@
 {
     "name": "specs.webplatform.org"
 ,   "version": "0.1.0"
-,   "description": "Static site for specs.wpo"
+,   "description": "Static site for specs.webplatform.org"
 ,   "engines": {
         "node": "0.10"
     ,   "npm": "1.3"
     }
 ,   "dependencies": {
-        "docpad": "~6.69.0"
-    ,   "docpad-plugin-jade": "~2.7.0"
-    ,   "docpad-plugin-less": "~2.4.1"
-    ,   "docpad-plugin-livereload": "~2.6.0"
+        "docpad": "~6.69"
+    ,   "docpad-plugin-jade": "~2.7"
+    ,   "docpad-plugin-less": "~2.4"
+    ,   "docpad-plugin-livereload": "~2.6"
     }
 ,   "main": "node_modules/docpad/bin/docpad-server"
 ,   "scripts": {
         "start": "node_modules/docpad/bin/docpad-server"
+    }
+,   "repository": {
+        "type": "git"
+    ,   "url": "git@github.com:webspecs/specs.webplatform.org.git"
     }
 }
