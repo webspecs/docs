@@ -1,4 +1,4 @@
-specs.webplatform.org
+Documentation for specs.webplatform.org
 =====================
 
-The content of that site
+The content of https://specs.webplatform.org/project/
