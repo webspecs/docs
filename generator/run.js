@@ -2,8 +2,10 @@
 var fs = require("fs-extra")
 ,   pth = require("path")
 ,   jn = pth.join
-// ,   async = require("async")
 ,   findit = require("findit")
+,   whacko = require("whacko")
+,   rfs = function (file) { return fs.readFileSync(file, "utf8"); }
+,   wfs = function (file, content) { fs.writeFileSync(file, content, { encoding: "utf8" }); }
 ,   genDir = __dirname
 ,   contentDir = jn(genDir, "content")
 ,   outDir = jn(genDir, "..")
@@ -36,6 +38,14 @@ function processFile (file) {
 }
 
 function processHTML (file) {
+    var newFile = content2out(file);
+    console.log("> Processing ........... " + newFile);
+    var $ = whacko.load(rfs(file))
+    ,   $tmpl = whacko.load(rfs(jn(genDir, "templates/default.html")))
+    ,   $html = $tmpl("html")
+    ;
+    // if there's a skip attribute, copy verbatim
+    if ($("html").attr("skip")) return wfs(newFile, rfs(file).replace(/\s+skip=['"]?true['"]?/, ""));
     
 }
 
