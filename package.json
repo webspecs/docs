@@ -1,19 +1,7 @@
 {
-    "name": "specs.webplatform.org"
-,   "version": "0.1.0"
-,   "description": "Static site for specs.wpo"
-,   "engines": {
-        "node": "0.10"
-    ,   "npm": "1.3"
-    }
+    "name": "webspecs-documentation"
+,   "version": "0.2.0"
+,   "description": "Static site for https://specs.webplatform.org/project/"
 ,   "dependencies": {
-        "docpad": "~6.69.0"
-    ,   "docpad-plugin-jade": "~2.7.0"
-    ,   "docpad-plugin-less": "~2.4.1"
-    ,   "docpad-plugin-livereload": "~2.6.0"
-    }
-,   "main": "node_modules/docpad/bin/docpad-server"
-,   "scripts": {
-        "start": "node_modules/docpad/bin/docpad-server"
     }
 }

@@ -1,4 +1,5 @@
-specs.webplatform.org
-=====================
+# Documentation
 
-The content of that site
+The content that generates https://specs.webplatform.org/project/.
+
+Note: if patching, you have to run the generator locally, it's not automatic.
