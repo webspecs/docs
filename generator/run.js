@@ -42,11 +42,25 @@ function processHTML (file) {
     console.log("> Processing ........... " + newFile);
     var $ = whacko.load(rfs(file))
     ,   $tmpl = whacko.load(rfs(jn(genDir, "templates/default.html")))
-    ,   $html = $tmpl("html")
+    // ,   $html = $tmpl("html")
     ;
     // if there's a skip attribute, copy verbatim
     if ($("html").attr("skip")) return wfs(newFile, rfs(file).replace(/\s+skip=['"]?true['"]?/, ""));
     
+    // process content
+    var $script = $("script['application/json']").first()
+    ,   data = JSON.parse($script.text())
+    ;
+    $script.remove();
+    if (!data.headerTitle) data.headerTitle = data.title;
+    $tmpl("title").text(data.headerTitle);
+    $tmpl("h1").text(data.title);
+    if (data.subtitle) $tmpl("div.subtitle").text(data.subtitle);
+    else {
+        $tmpl("h1").addClass("onlyTitle");
+        $tmpl("div.subtitle").remove();
+    }
+    $tmpl("div.content").append($.contents());
 }
 
 
