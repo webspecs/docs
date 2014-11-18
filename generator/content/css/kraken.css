@@ -1,0 +1,149 @@
+
+/* font loading */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/robotoslab-regular-webfont.eot');
+    src: url('/assets/fonts/robotoslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/robotoslab-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/robotoslab-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/robotoslab-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/robotoslab-bold-webfont.eot');
+    src: url('/assets/fonts/robotoslab-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/robotoslab-bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/robotoslab-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/robotoslab-bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* structure */
+html, body {
+    margin: 0;
+    padding:    0;
+    font-family:    sans-serif;
+}
+div.content {
+    max-width:  50em;
+    margin: 0 auto;
+}
+
+/* header styles */
+header {
+    margin: 16px 0;
+    background: #fe6a65;
+}
+.subheader {
+    max-width:  50em;
+    margin: 0 auto;
+    padding:    10px 0;
+    img {
+        float:  left;
+    }
+    .title {
+        margin-left:    116px;
+    }
+    .subtitle {
+        font-style: italic;
+        color:  #fff;
+        font-family:    Roboto, serif;
+        font-size:  20px
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:    Roboto, serif;
+    color:  #fe6a65;
+}
+h1 {
+    font-size:  48px;
+    font-weight:    100;
+    color:  #fff;
+    margin: 16px 0 0 0;
+    padding:    0;
+}
+h1.onlyTitle {
+    margin-top: 26px;
+}
+
+/* body stuff */
+p, li, dd, dt {
+    line-height:    1.8;
+}
+a {
+    color:  #fe6a65;
+    text-decoration:    none;
+}
+dt {
+    font-weight:    bold;
+}
+dd {
+    padding:    0 0 1em 2em;
+}
+blockquote {
+    margin: 1em 3em 1em 3em;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background: #fe6a65;
+    font-family:    Roboto, serif;
+    color:  #fff;
+    padding-top:    2em;
+    text-align: right;
+    clear:  both;
+}
+.subfooter {
+    max-width:  50em;
+    margin: 0 auto;
+}
+footer a {
+    color:  #fff;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* utilities */
+.clearfix {
+    display: block;
+    zoom: 1;
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* alternative */
+@media print {
+    header {
+        background: #fff;
+        color:  #000;
+    }
+    footer {
+        background: #fff;
+        color:  #000;
+    }
+    a {
+        color:  #666;
+        border-bottom:  1px dotted #666;
+    }
+    a[href^="http"]:after {
+        content: "  (" attr(href) ")";
+        color:  #333;
+        font-style: italic;
+    }
+    footer a[href^="http"]:after {
+        content:    "";
+    }
+}

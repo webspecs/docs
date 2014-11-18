@@ -1,3 +1,4 @@
+#!/usr/local/bin/node
 
 var fs = require("fs-extra")
 ,   pth = require("path")
@@ -48,11 +49,11 @@ function processHTML (file) {
     if ($("html").attr("skip")) return wfs(newFile, rfs(file).replace(/\s+skip=['"]?true['"]?/, ""));
     
     // process content
-    var $script = $("script['application/json']").first()
+    var $script = $("script[type='application/json']").first()
     ,   data = JSON.parse($script.text())
     ;
     $script.remove();
-    if (!data.headerTitle) data.headerTitle = data.title;
+    if (!data.headerTitle) data.headerTitle = data.title + " | Web Platform Specs";
     $tmpl("title").text(data.headerTitle);
     $tmpl("h1").text(data.title);
     if (data.subtitle) $tmpl("div.subtitle").text(data.subtitle);
@@ -60,7 +61,8 @@ function processHTML (file) {
         $tmpl("h1").addClass("onlyTitle");
         $tmpl("div.subtitle").remove();
     }
-    $tmpl("div.content").append($.contents());
+    $tmpl("div.content").append($.html());
+    wfs(newFile, $tmpl.html().replace(/&amp;apos;/g, "'"));
 }
 
 
@@ -68,9 +70,9 @@ function processSource (path) {
     var finder = findit(path);
     finder.on("directory", processDir);
     finder.on("file", function (file) {
-        var ext = fs.extname(file);
-        if (ext === "html") processHTML(file);
-        else                processFile(file);
+        var ext = pth.extname(file);
+        if (ext === ".html") processHTML(file);
+        else                 processFile(file);
     });
     finder.on("end", function () {
         console.log("OK! Source tree processed.");
