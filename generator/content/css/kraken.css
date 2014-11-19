@@ -34,7 +34,7 @@ div.content {
 
 /* header styles */
 header {
-    margin: 46px 0;
+    margin: 46px 0 30px 0;
     background: url("/assets/img/docs-lines.svg") repeat-x;
     border-bottom:  1px solid #fe6a65;
     padding:    30px 0;
@@ -63,20 +63,36 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size:  48px;
     font-weight:    100;
+    text-shadow:    1px 1px 1px #aaa;
     margin: 6px 0 0 0;
     padding:    0;
 }
 h1.onlyTitle {
     margin-top: 26px;
 }
+h2 {
+    font-size:  36px;
+    font-weight:    100;
+    margin-bottom:  0;
+}
 
 /* body stuff */
 p, li, dd, dt {
     line-height:    1.8;
 }
+p {
+    margin-top: 0;
+}
+p.blurb {
+    font-family:    Roboto, serif;
+    font-size:  1.1em;
+    font-style: italic;
+    margin-bottom: 30px;
+}
 a {
     color:  #fe6a65;
     text-decoration:    none;
+    box-shadow: 0 -3px 0 rgba(158, 211, 58, 0.5) inset;
 }
 dt {
     font-weight:    bold;
@@ -88,6 +104,41 @@ blockquote {
     margin: 1em 3em 1em 3em;
     font-style: italic;
 }
+section {
+    margin-top: 60px;
+}
+
+/* calls to action */
+div.act {
+    display:    table-row;
+    border-spacing: 10px;
+    border-collapse: collapse;
+}
+div.act a {
+    display:    table-cell;
+    color:  inherit;
+    width:  31%;
+    color:  #fff;
+    padding:    10px;
+    font-family:    Roboto, serif;
+    border-right:   5px solid #fff;
+    box-shadow: none;
+}
+div.act a:last-of-type {
+    border-right:   none;
+}
+div.act span.callout {
+    display:    block;
+    font-size:  2.5em;
+    font-style: italic;
+}
+div.act a:nth-of-type(1) { background: #9ed33a; }
+div.act a:nth-of-type(2) { background: #fe6965; }
+div.act a:nth-of-type(3) { background: #66b8bc; }
+div.act a:nth-of-type(1):hover { color: #9ed33a; background: #fff; }
+div.act a:nth-of-type(2):hover { color: #fe6965; background: #fff; }
+div.act a:nth-of-type(3):hover { color: #66b8bc; background: #fff; }
+
 
 /* Footer */
 footer {
@@ -104,6 +155,7 @@ footer {
 }
 footer a {
     color:  #fff;
+    box-shadow: none;
 }
 footer p {
     margin: 0;
@@ -128,7 +180,6 @@ footer p {
 /* alternative */
 @media print {
     header {
-        background: #fff;
         color:  #000;
     }
     footer {
@@ -138,6 +189,7 @@ footer p {
     a {
         color:  #666;
         border-bottom:  1px dotted #666;
+        box-shadow: none;
     }
     a[href^="http"]:after {
         content: "  (" attr(href) ")";
