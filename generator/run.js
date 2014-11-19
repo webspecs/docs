@@ -61,7 +61,7 @@ function processHTML (file) {
         $tmpl("h1").addClass("onlyTitle");
         $tmpl("div.subtitle").remove();
     }
-    $tmpl("div.content").append($.html());
+    $tmpl("div.content").append($("body").html());
     wfs(newFile, $tmpl.html().replace(/&amp;apos;/g, "'"));
 }
 
