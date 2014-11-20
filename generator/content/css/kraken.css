@@ -80,9 +80,6 @@ h1 {
     margin: 6px 0 0 0;
     padding:    0;
 }
-h1.onlyTitle {
-    margin-top: 26px;
-}
 h2 {
     font-size:  36px;
     font-weight:    100;
@@ -164,6 +161,7 @@ footer {
     font-family:    Roboto, serif;
     color:  #fff;
     padding:    30px 0 15px 0;
+    margin-top: 60px;
     text-align: right;
     clear:  both;
 }
