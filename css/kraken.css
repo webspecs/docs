@@ -35,7 +35,6 @@ div.content {
 
 /* header styles */
 header {
-    margin: 0 0 60px 0;
     background: url("/assets/img/docs-lines.svg") bottom repeat-x,
                 linear-gradient(to bottom, #fff 0%, #fff3f2 100%),
 /*                linear-gradient(to bottom, #fff 0%, #f1ecd7 100%),*/
@@ -46,7 +45,7 @@ header {
 .subheader {
     max-width:  50em;
     margin:     0 auto;
-    padding:    10px 0;
+/*    padding:    0 0 30px 0;*/
 }
 .subheader img {
     float:  left;
@@ -59,6 +58,16 @@ header {
     color:  #61403F;
     font-family:    Roboto, serif;
     font-size:  20px;
+}
+nav {
+    display:    box;
+    max-width:  50em;
+    text-align: right;
+    font-family:    Roboto, serif;
+    margin: 0 auto 60px auto;
+}
+nav a {
+    box-shadow: none;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:    Roboto, serif;
