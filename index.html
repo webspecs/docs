@@ -106,6 +106,32 @@
     </ul>
   </section>
   
+  <section id="community">
+    <h2>Community &amp; Support</h2>
+    <p>
+      Getting started can be a bit daunting. If you're hesitant, or if you have any question, simply
+      either:
+    </p>
+    <ul>
+      <li>
+        Bring up your issue on <a href="https://discourse.specifiction.org/">Discourse</a>, there
+        are always helpful people there ready to give you a hand; or
+      </li>
+      <li>
+        Come hang out on IRC, channel <a href="irc://freenode.net/webspecs">#webspecs on the
+        Freenode.net network</a>, it's a small gang of friendly people who'll help you out; or
+      </li>
+      <li>
+        If all else fails, ping <a href="https://twitter.com/robinberjon">Robin</a> on Twitter and
+        he'll figure something out.
+      </li>
+    </ul>
+    <p>
+      In any case, don't be shy and don't be scared! No one will bite your head off, and if they try
+      we'll handle them, as per the <a href="policy/anti-jerk.html">anti-jerk policy</a>.
+    </p>
+  </section>
+  
   <section id="how-things-work">
     <h2>How Things Work</h2>
     <p>
@@ -113,84 +139,66 @@
       in the <a href="how-to/">how-to section</a>. But here’s the summary version.
     </p>
     <p>
-      
+      For those simply interested in <strong>reading specifications and ongoing proposals</strong>,
+      they are <em>all</em> linked from the Web Platform Specs index at the root of <a href="/">https://specs.webplatform.org/</a>. You can see this as the one-stop-shop for all
+      specifications produced by this project. Eventually we are considering turning this into the
+      single entry point for all specifications that define the platform irrespective of where they
+      originate, but that is still under discussion.
     </p>
-    <!--
-      make this a very basic intro, refer to other page for the gory details
-    
-      forking
-      index
-      specifiction + issues
-      common format: BS (perhaps two)
-      simple cross-referencing
-      linting
-      shipping through testing
-      tests: link to TestTWF
-      gatherings: mention chapters and how we are inviting their creation
-    -->
-    
-  </section>
-  
-  <section id="principles">
-    <h2>Core Principles</h2>
     <p>
-      Web standards have flourished in large part through their openness. A core tenet of WebSpecs
-      is to create standards that are fully open, matching the needs and habits of the Web
-      community. This builds on the following principles:
+      If you wish to <strong>propose or discuss ideas</strong> that aren't clearly bugs against a
+      specific document, then our <a href="https://discourse.org/">Discourse</a> instance at <a href="http://discourse.specifiction.org/">http://discourse.specifiction.org/</a> (no, it’s not
+      a typo and the address will change) is perfect for that. It already has an active community,
+      without being noisy either. If the mere words “online forum” are enough to fill you with the
+      sort of dread that only the combined power of terrible design and blinking emoticons can
+      raise, then fear not. We are like you. This specific forum is not like that. It is lovely to
+      use, pretty to look at, and discussions are eminently civilised.
     </p>
-    <dl>
-      <dt id="forkable">Forkable</dt>
-      <dd>
-        Up until a few years ago, forking was perceived as a mode of failure. Today, it is a mode of
-        collaboration: <em>Make Forks Not War</em>.
-        XXX
-      </dd>
-      <dt id="hackable">Hackable</dt>
-      <dd>
-        
-      </dd>
-      <dt id="thoughtful">Thoughtful</dt>
-      <dd>
-        Standard organisations often start off flexible and smart, but over time collectively suffer
-        from a slow, toxic drift towards dumb adherence to rules over thoughtful consideration of
-        goals. It is a continuing goal of WebSpecs to avoid this drift, to keep the amount of rules
-        to a strict minimum, and to always leave room for intelligent discussion amongst smart,
-        constructive adults.
-      </dd>
-      <dt id="rf">Royalty-Free</dt>
-      <dd>
-        
-      </dd>
-      <dt id="software-practices">Software Practices</dt>
-      <dd>
-        
-      </dd>
-      <dt id="tested">Tested</dt>
-      <dd>
-        There is only one difference between a WebSpecs specification sitting in a topic branch or
-        on anyone’s fork and one that’s taken into the <code>master</code> branch of a 
-        <a href="https://github.com/webspecs">webspecs repository</a>: testing. If a specification
-        has a good enough (for sane values of “good enough”, perfection not being of this world) 
-        test suite in our sister <a href="https://github.com/w3c/web-platform-tests/">Web Platform
-        Tests</a> project and that test suite has a <em>good enough</em> pass ratio in at least a
-        couple of major browsers, then that specification is good to merge to <code>master</code>.
-        Otherwise, it’s a proposal.
-      </dd>
-    </dl>
-    <!--
-    -->
-    
-  </section>
-
-  <section id="notes-for-oldies">
-    <h2>Notes for Seasoned Standardistas</h2>
     <p>
-      So, if you’ve already got extensive experience with standards, what would be different for you
-      when contributing here?
+      Finally, for those wishing to <strong>work on an actual specification</strong> things are a
+      little bit more involved, but it's very little you won't be familiar with anyway if you've
+      done open source development.
     </p>
-    <!--
-      baseline 
-    -->
+    <p>
+      Specifications are written in a Markdown variant known as <a href="https://github.com/webspecs/bikeshed">Bikeshed</a>, by the most excellent Tab Atkins. It
+      takes care of a lot of the boring stuff involved in specifications, such as cross-references,
+      consistent styling, numbered sections and tables of contents, and much, much more.
+    </p>
+    <p>
+      To file a bug against a specification, just do so in its GitHub repository (the link will be
+      at the top). If you wish to propose a relatively simple change, then simply make a pull
+      request, as usual. If however the change you are proposing is a little more involved and
+      would benefit from broader community review, then you will want to keep your fork separate
+      while it is discussed and for that to have it included in the index as a proposal. That's
+      straightforward: it's a simple matter of making a pull request against
+      <a href="https://github.com/webspecs/the-index">the index</a> to include a link to your
+      proposal, using a very simple format.
+    </p>
+    <p>
+      In order to start a specification from scratch, the process is just about the same. You need
+      to create a repository of your own (it does not have to be under the “webspecs” organisation),
+      being careful to give it a sensible name as that is what will be used to identify it in the
+      system. We recommend that you use the <a href="https://github.com/webspecs/webspec"><code>webspec</code></a> tool to make sure that it
+      is set up properly. Once you've written up enough that you would consider sharing it with the
+      world, simply make a pull request to have it linked to from
+      <a href="https://github.com/webspecs/the-index">the index</a>.
+    </p>
+    <p>
+      One thing that is important to note: we ascribe specific meaning to some <code>git</code>
+      branches. We reserve <code>master</code> for specifications that are well supported in
+      implementations (as demonstrated using a credible test suite) and <code>develop</code>
+      for specifications that are in the process of being implemented by vendors (i.e. they have
+      shown genuine interest and some buggy, partial code is being worked on). For specifications
+      that are still just proposals, please use any other branch name.
+    </p>
+    <p>
+      That's it! Or at least, that's all you need to understand to get started. We are building
+      extensive documentation. And like everything we do, if you don't like it,
+      <a href="https://github.com/webspecs/docs">fork it and send us a pull request</a>!
+    </p>
+    <p>
+      Enjoy the ride!
+    </p>
   </section>
 </div>
     <footer>
@@ -200,7 +208,7 @@
           •
           <a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>
           •
-          <a href="https://github.com/webspecs/documentation">⋔ me</a>
+          <a href="https://github.com/webspecs/docs">⋔ me</a>
           •
           <a href="/docs/policy/anti-jerk.html">anti-jerk policy</a>
         </p>
