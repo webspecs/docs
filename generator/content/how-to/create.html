@@ -4,5 +4,118 @@
   }
 </script>
   <p>
-    Work in progress.
+    There are essentially three cases in which you will want to handle your own repository of a
+    specification.
   </p>
+  <dl>
+    <dt>Relatively simple correction or change</dt>
+    <dd>
+      You have found an issue or have a relatively straightforward improvement to make to an
+      existing specification. You do so by forking the specification, modifying it in a branch, and
+      making a pull-request against the original. No specific knowledge is required beyond the
+      basics of git and GitHub, and the format used for specifications (for which links are provided
+      below).This is exactly the same process as for any open source project on GitHub.
+    </dd>
+    <dt><a href="#forking">Forking</a></dt>
+    <dd>
+      You disagree with part of an existing specification or you wish to propose a relatively large
+      new feature or change of behaviour. It is likely that your proposal would not be accepted
+      immediately but would require discussion in the community, likely leading to some changes
+      along the way. In this case you will want to not only fork the specification, but also
+      publish it on WebSpecs so that others can review it. This is explained below.
+    </dd>
+    <dt><a href="#scratch">Starting From Scratch</a></dt>
+    <dd>
+      You have a completely new idea for a specification and you wish to publish it as a WebSpec.
+      Simply follow the instructions in the corresponding section below and you will be good to go.
+      Note that before embarking on this it is <strong>strongly</strong> recommended that you first
+      discuss the issue on <a href="http://discourse.specifiction.org/">Discourse</a> as it is
+      likely that you will receive useful feedback and guidance from the community there that could
+      save you a lot of work down the line.
+    </dd>
+  </dl>
+  <section>
+    <h2 id="forking">Forking</h2>
+    <p>
+      Simply fork the repository for the specification of interest into a new one that you have 
+      write access to. It absolutely does not need to be under the
+      <a href="https://github.com/webspecs/">WebSpecs</a> organisation at GitHub. It doesn't matter
+      if you are forking a fork (of a fork of a fork), simply pick the most logical starting point
+      for you.
+    </p>
+    <p>
+      Check it out and create a new topic branch. The rule for branches is very simple:
+      <code>master</code> is for things that have shipped in implementations and are well-tested, and
+      <code>develop</code> is for stuff that doesn't yet pass tests but that does have clear
+      implementation commitments from browser vendors. If not in either of the previous two
+      categories, just pick a self-descriptive name that you like.
+    </p>
+    <p>
+      You will then need to edit your specification. The file you will want to change will typically
+      be called <code>index.bs</code> (but other <code>*.bs</code> variants are possible). The
+      format is "Bikeshed", a Markdown flavour that is popular for specification writing and for
+      which you can <a href="https://github.com/tabatkins/bikeshed/tree/master/docs">read
+      documentation online</a>. If you are familiar with Markdown you ought to find Bikeshed easy.
+      If you are of those who hate Markdown, do not despair: an alternative HTML-based format will
+      soon be made available as well.
+    </p>
+    <p>
+      It is recommended to have a copy of Bikeshed installed (preferably in a directory parallel to
+      the specifications you are working on) but it is not required.
+    </p>
+    <p>
+      Make changes, push them, etc. Once you want to publish your work to the community, simply
+      make a pull-request against <a href="https://github.com/webspecs/the-index">the-index</a>.
+      That is the document that sits at the root of 
+      <a href="https://specs.webplatform.org/">https://specs.webplatform.org/</a> and which drives
+      the automatic publishing system. When your PR is reviewed, you will be given simple
+      instructions to ensure that your fork is automatically published whenever you make changes to
+      it. Once your PR is accepted, the WebSpecs index will be updated and your specification will
+      be published.
+    </p>
+    <p>
+      That's it!
+    </p>
+  </section>
+  <section>
+    <h2 id="scratch">Starting From Scratch</h2>
+    <p>
+      The process for starting from scratch is substantially the same as the process for forking,
+      except of course that you have to set up the initial repository yourself.
+    </p>
+    <p>
+      To begin with, create a repository in the usual way, wherever you want. Pick a name for it
+      that is descriptive (avoid silly, because that tends to stick). Clone it locally, and create
+      a branch according to the guidelines presented in the previous section.
+    </p>
+    <p>
+      You will want to install the <code>webspec</code> tool, which is straightforward: <code>npm
+      install -g webspec</code>. Note: in the close future this tool will be replace with a simpler
+      Web interface that carries out the same basic tasks.
+    </p>
+    <p>
+      As indicated in the previous section, it is a good idea to clone Bikeshed in a directory
+      parallel to the ones in which you edit specifications. While not required (the source gets
+      regenerated at publish time anyway) it allows you to check that you don't have errors in your
+      draft.
+    </p>
+    <p>
+      While at the root of your specification's directory, type <code>webspec new</code> and follow
+      the instructions. (Note: the current default license of "CC0" is likely to change.)
+    </p>
+    <p>
+      This should give you a specification that's ready to go! At this point you are ready to make
+      a pull-request against <a href="https://github.com/webspecs/the-index">the-index</a> and
+      follow the subsequent instructions. You're good to go!
+    </p>
+  </section>
+  <section>
+    <h2 id="help">Getting Help</h2>
+    <p>
+      The easiest way to get help is to join us on IRC, channel
+      <a href="irc://freenode.net/webspecs">#webspecs on the Freenode.net network</a>. It's a
+      helpful bunch. If you are certain that the issue is with a tool, file an issue on GitHub.
+      There are more options listed in <a href="/docs/#community">Community &amp; Support</a>, and
+      if all else fails you can email <a href="mailto:robin@berjon.com">Robin</a>.
+    </p>
+  </section>
