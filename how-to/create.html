@@ -76,27 +76,43 @@
       categories, just pick a self-descriptive name that you like.
     </p>
     <p>
-      You will then need to edit your specification. The file you will want to change will typically
-      be called <code>index.bs</code> (but other <code>*.bs</code> variants are possible). The
-      format is "Bikeshed", a Markdown flavour that is popular for specification writing and for
-      which you can <a href="https://github.com/tabatkins/bikeshed/tree/master/docs">read
-      documentation online</a>. If you are familiar with Markdown you ought to find Bikeshed easy.
-      If you are of those who hate Markdown, do not despair: an alternative HTML-based format will
-      soon be made available as well.
+      You will then need to edit your specification. WebSpecs can come in two formats. If you see a
+      file called <code>index.bs</code> (or other <code>*.bs</code> file name variant, though those
+      are discouraged) then the syntax is “Bikeshed”. If there’s an <code>index.src.html</code> file
+      (or, again, <code>*.src.html</code> variants are technically possible but as of this writing
+      there actually aren’t any) then the format is “ReSpec”.
     </p>
     <p>
-      It is recommended to have a copy of Bikeshed installed (preferably in a directory parallel to
-      the specifications you are working on) but it is not required.
+      Bikeshed is a Markdown flavour popular for specification writing and for which you can <a href="https://github.com/tabatkins/bikeshed/tree/master/docs">read documentation online</a>.
+      If you are familiar with Markdown you ought to find Bikeshed easy. If you are of those who
+      hate Markdown, do not despair: the alternative is an HTML-based format.
+    </p>
+    <p>
+      If you use Bikeshed, it is recommended to have a copy of Bikeshed installed (preferably in a
+      directory parallel to the specifications you are working on) but it is not required.
+    </p>
+    <p>
+      If you prefer HTML and JS to Markdown, WebSpecs can also be written using ReSpec. Like
+      Bikeshed it takes care of a lot of the things you don’t want to have to think about. You can
+      start from <a href="http://www.w3.org/respec/examples/minimal-w3c.html">a very basic
+      example</a> and only tweak the configuration (near the top of the source) to set 
+      <code>specStatus</code> to <code>"webspec"</code> and <code>repository</code> to the
+      <code>user/repo-name</code> string that fits your specification. Call the file
+      <code>index.src.html</code> and you’re good to go! It should look like
+      <a href="http://www.w3.org/respec/examples/minimal-w3c.html?specStatus=webspec;repository=w3c/respec-docs">this
+      very basic example</a>, which is in fact the same as linked right above but with its
+      configuration overridden in the query string.
     </p>
     <p>
       Make changes, push them, etc. Once you want to publish your work to the community, simply
       make a pull-request against <a href="https://github.com/webspecs/the-index">the-index</a>.
       That is the document that sits at the root of 
       <a href="https://specs.webplatform.org/">https://specs.webplatform.org/</a> and which drives
-      the automatic publishing system. When your PR is reviewed, you will be given simple
-      instructions to ensure that your fork is automatically published whenever you make changes to
-      it. Once your PR is accepted, the WebSpecs index will be updated and your specification will
-      be published.
+      the automatic publishing system. For a fork you will mostly just want to add a pointer to your own
+      <code>user/repo#branch</code>. When your PR is reviewed, in order to ensure that your fork is
+      automatically published whenever you make changes to it you just need to create a Web hook in
+      your GitHub repository that points to <code>http://publican.berjon.com/hook</code>. Once your
+      PR is accepted, the WebSpecs index will be updated and your specification will be published.
     </p>
     <p>
       That's it!
@@ -116,22 +132,36 @@
     <p>
       You will want to install the <code>webspec</code> tool, which is straightforward: <code>npm
       install -g webspec</code>. Note: in the close future this tool will be replace with a simpler
-      Web interface that carries out the same basic tasks.
+      Web interface that carries out the same basic tasks. Also, the current tool does not support
+      all the nice features that are available, don’t hesitate to just ask for help setting up until
+      the Web tool is ready.
     </p>
     <p>
-      As indicated in the previous section, it is a good idea to clone Bikeshed in a directory
-      parallel to the ones in which you edit specifications. While not required (the source gets
-      regenerated at publish time anyway) it allows you to check that you don't have errors in your
-      draft.
+      As indicated in the previous section, if you’re using Bikeshed it is a good idea to clone it
+      in a directory parallel to the ones in which you edit specifications. While not required (the
+      source gets regenerated at publish time anyway) it allows you to check that you don't have
+      errors in your draft.
+    </p>
+    <p>
+      For ReSpec, the generation is done in the browser so there is nothing to install. When you
+      load your <code>index.src.html</code> in your browser, a little “ReSpec” pill shows up in the
+      top right corner of the page (which isn't present in the published version of the document).
+      If there are errors with your specification, they’ll be reported there.
     </p>
     <p>
       While at the root of your specification's directory, type <code>webspec new</code> and follow
-      the instructions. (Note: the current default license of "CC0" is likely to change.)
+      the instructions. (Note: the current default license of "CC0" will soon change across the
+      board, for ReSpec documents it is already a new option.)
     </p>
     <p>
       This should give you a specification that's ready to go! At this point you are ready to make
-      a pull-request against <a href="https://github.com/webspecs/the-index">the-index</a> and
-      follow the subsequent instructions. You're good to go!
+      a pull-request against <a href="https://github.com/webspecs/the-index">the-index</a> to add a
+      section briefly describing your specification (copy freely from the others) and pointing to
+      your <code>user/repo#branch</code>. When your PR is reviewed, in order to ensure that your
+      fork is automatically published whenever you make changes to it you just need to create a Web
+      hook in your GitHub repository that points to <code>http://publican.berjon.com/hook</code>.
+      Once your PR is accepted, the WebSpecs index will be updated and your specification will be
+      published. You're good to go!
     </p>
   </section>
   <section>

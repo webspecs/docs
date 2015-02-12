@@ -110,7 +110,8 @@
       <li>
         Support tooling to create specifications is available, notably
         <a href="https://github.com/webspecs/webspec">to create and validate specifications</a> and
-        to <a href="https://github.com/webspecs/bikeshed">generate them</a>.
+        to generate them using either <a href="https://github.com/webspecs/bikeshed">Bikeshed</a> or
+        <a href="http://w3.org/respec/">ReSpec</a>.
       </li>
       <li>
         Our sister project <a href="https://github.com/w3c/web-platform-tests/">Web Platform
@@ -174,9 +175,17 @@
       done open source development.
     </p>
     <p>
-      Specifications are written in a Markdown variant known as <a href="https://github.com/webspecs/bikeshed">Bikeshed</a>, by the most excellent Tab Atkins. It
-      takes care of a lot of the boring stuff involved in specifications, such as cross-references,
-      consistent styling, numbered sections and tables of contents, and much, much more.
+      Specifications are written using formats that are friendly to people who know Web technology
+      but aren’t necessarily standards experts. There are two options. If you prefer HTML and
+      JavaScript then <a href="http://w3.org/respec/">ReSpec</a> (see also
+      <a href="https://github.com/w3c/respec">the source</a>) is a popular option. The idea is that
+      you write straightforward HTML and this little JavaScript library handles all the stuff you
+      don't want to be thinking about for you. If you're more with the Markdown (or is it
+      CommonMark now?), or if you’re like Python, you can use the most excellent
+      <a href="https://github.com/webspecs/bikeshed">Bikeshed</a>, by the most excellent Tab Atkins.
+      Rooted in simple Markdown conventions, like ReSpec it takes care of a lot of the boring stuff
+      involved in specifications, such as cross-references, consistent styling, numbered sections
+      and tables of contents, and much, much more.
     </p>
     <p>
       To file a bug against a specification, just do so in its GitHub repository (the link will be
